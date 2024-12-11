@@ -1,7 +1,7 @@
 # DiscoHook
 Use discord webhooks in Computercraft to your advantage, allowing for sending, deleting, editing and reading with embed capabilities.
 
-[Wiki](https://github.com/banana-boye/DiscoHook/wiki/intro)
+[Wiki](https://github.com/banana-boye/DiscoHook/wiki)
 
 ### Using DiscoHook
 
