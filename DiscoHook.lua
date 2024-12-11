@@ -99,8 +99,12 @@ function WEBHOOK.create(url)
     function webhookClass.deleteMessage(self, messageId)
         local response, err = http.request({url = self.url.."/messages/"..(messageId and messageId or self.lastMessage), method = "DELETE"})
         
-        table.remove(self.messages, #self.messages)
-        self.lastMessage = self.messages[#self.messages]
+        for index, message in pairs(self.messages) do
+            if message == messageId then
+                table.remove(self.messages, index)
+            end
+        end
+        self.lastMessage = self.message == messageId and self.messages[#self.messages] or self.lastMessage
         if response then
             return true
         else
